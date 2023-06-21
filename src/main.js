@@ -1,17 +1,25 @@
+//Vuetify 
+import 'vuetify/styles'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
 import './assets/main.css'
 
-//VUETIFY
-import 'vuetify/styles'
-import * 
 import { createApp } from 'vue'
-//import { createPinia } from 'pinia'
-
+import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
+import { createVuetify } from 'vuetify/lib/framework.mjs'
 
 const app = createApp(App)
 
-//app.use(createPinia())
-app.use(router)
+// Instancia de Vuetify
+const vuetify = createVuetify({
+    components,
+    directives
+})
 
+app.use(createPinia())
+app.use(vuetify)
+app.use(router)
 app.mount('#app')
