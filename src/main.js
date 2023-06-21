@@ -2,6 +2,7 @@
 import 'vuetify/styles'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import axios from 'axios'
 
 import './assets/main.css'
 
@@ -23,3 +24,4 @@ app.use(createPinia())
 app.use(vuetify)
 app.use(router)
 app.mount('#app')
+app.use(axios)

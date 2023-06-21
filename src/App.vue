@@ -3,7 +3,6 @@
   import PokeHeader from './components/PokeHeader.vue'
   import PokeCard from './components/PokeCard.vue'
   import PokeFooter from './components/PokeFooter.vue'
-  import axios from 'axios'
 </script>
 
 <template>
