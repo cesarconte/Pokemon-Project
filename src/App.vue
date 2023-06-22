@@ -1,7 +1,7 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router'
+  /* import { RouterLink, RouterView } from 'vue-router' */
   import PokeHeader from './components/PokeHeader.vue'
-  /*import PokeCard from './components/PokeCard.vue'*/
+  /* import PokeCard from './components/PokeCard.vue' */
   import PokeFooter from './components/PokeFooter.vue'
 </script>
 
@@ -10,8 +10,8 @@
   <header>
     <PokeHeader msg="PokeHeader" />
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <!-- <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink> -->
       </nav>
   </header>
   <main>

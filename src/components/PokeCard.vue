@@ -1,28 +1,4 @@
-<template>
-   <div class="poke-card" :class="pokemonClass">
-    <div class="image-section">
-      <img v-if="pokemon.imageUrl" :src="pokemon.imageUrl" :alt="pokemon.name" class="pokemon-image" />
-    </div>
-    <div class="info-row">
-      <div class="info-item">
-        <span class="info-label">ID:</span>
-        <span class="info-value">{{ pokemon.id }}</span>
-      </div>
-      <div class="info-item">
-        <span class="info-label">Name:</span>
-        <span class="info-value">{{ pokemon.name }}</span>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-item">
-        <span class="info-label">Type:</span>
-        <span class="info-value">{{ pokemon.type }}</span>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script setup>
+ <script setup>
 import { reactive, onMounted, watch, computed } from 'vue'
 import axios from 'axios'
 
@@ -49,7 +25,7 @@ const fetchPokemonData = (id) => {
 }
 
 // Propiedad que representa el número de ID del Pokémon
-let pokemonId = 587
+let pokemonId = 138;
 
 // Vigila los cambios en la propiedad pokemonId
 watch(() => pokemonId, (newPokemonId) => {
@@ -87,10 +63,85 @@ const pokemonClass = computed(() => {
   const type = pokemon.type.toLowerCase()
   return `poke-card ${type}`
 })
+
+// eslint-disable-next-line vue/no-export-in-script-setup
+export default {
+  data() {
+    return {
+      dialog: false,
+    }
+  },
+}
 </script>
 
+<!--<template>
+   <div class="poke-card" :class="pokemonClass">
+    <div class="image-section">
+      <img v-if="pokemon.imageUrl" :src="pokemon.imageUrl" :alt="pokemon.name" class="pokemon-image" />
+    </div>
+    <div class="info-row">
+      <div class="info-item">
+        <span class="info-label">ID:</span>
+        <span class="info-value">{{ pokemon.id }}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Name:</span>
+        <span class="info-value">{{ pokemon.name }}</span>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-item">
+        <span class="info-label">Type:</span>
+        <span class="info-value">{{ pokemon.type }}</span>
+      </div>
+    </div>
+  </div>
+</template> -->
+
+<template>
+  <v-row justify="center">
+    <v-dialog v-model="dialog" width="800">
+      <template v-slot:activator="{ props }">
+        <v-btn color="primary" v-bind="props"> Open Dialog </v-btn>
+      </template>
+      <v-card>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+        </v-card-actions>
+        <v-card class="mx-auto" max-width="400">
+          <v-img class="align-end text-white" height="200" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover>
+            <v-card-title>ID: 23</v-card-title>
+          </v-img>
+
+          <v-card-subtitle class="pt-4"> Name: charmander </v-card-subtitle>
+
+          <v-card-text>
+            <div>Type: agua</div>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-btn block variant="tonal" density="default" elevation="2" outlined rounded="xs" size="x-large"
+              aria-label="Refresh">Rounded xs</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-card>
+    </v-dialog>
+  </v-row>
+</template>
+
+<!-- <script>
+export default {
+  data() {
+    return {
+      dialog: false,
+    }
+  },
+}
+</script> -->
+
 <style scoped>
-.poke-card {
+
+/* .poke-card {
   border: 1px solid #ccc;
   padding: 1rem;
   margin: 1rem;
@@ -132,7 +183,7 @@ const pokemonClass = computed(() => {
 
 .info-value {
   font-weight: bold;
-}
+}*/
 
 /* Colores de fondo de acuerdo al tipo de Pokémon */
 .poke-card.normal {
