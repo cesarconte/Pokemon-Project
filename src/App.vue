@@ -1,28 +1,29 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+  import { RouterLink, RouterView } from 'vue-router'
+  import PokeHeader from './components/PokeHeader.vue'
+  import PokeCard from './components/PokeCard.vue'
+  import PokeFooter from './components/PokeFooter.vue'
 </script>
 
 <template>
+
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
+    <PokeHeader msg="pokerHeader" />
+      <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+      </nav> -->
   </header>
+  <main>
+    <RouterView />
+  </main>
 
-  <RouterView />
+  <footer>
+    <PokeFooter />
+  </footer>
+
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+
 </style>
