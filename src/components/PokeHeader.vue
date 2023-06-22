@@ -3,7 +3,8 @@
 </script>
 
 <template>
-<img src=''
+<img src='..\public\logo.png'></img>
+<h1>Hola</h1>
 </template>
 
 <style scoped>

@@ -8,7 +8,7 @@
 <template>
 
   <header>
-    <PokeHeader msg="pokerHeader" />
+    <PokeHeader/>
       <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
